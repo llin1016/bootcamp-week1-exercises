@@ -1,14 +1,15 @@
-const assert = require('assert')
+const assert = require('assert');
+const { callbackify } = require('util');
 
 /**
  * Complete the implementation of sum and reduce such that reducing an array
  * returns the sum of its values. e.g. [0,4,3,6,9].reduce(sum, 0) === 22
  */
 
-const sum = (acc, cur) => {};
+const sum = (acc, cur) => acc + cur
 
 Array.prototype.reduce = function(fun, init) {
-
+    
 };
 
 const arr1 = [0, 1, 2, 3, 4];

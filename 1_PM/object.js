@@ -10,7 +10,23 @@ const assert = require('assert')
  */
 
 const hasFalsyValue = obj => {
-};
+  // Base Case: obj is not an object or is null or is an array
+  if (typeof obj !== "object" || Array.isArray(obj) || obj === null){
+    if (!obj){
+      return true
+    }
+  } else {
+      const list = []
+      Object.keys(obj).forEach(element => {
+          list.push(hasFalsyValue(obj[element]))
+      })
+      if (list.includes(true)){
+        return true
+      } else {
+        return false
+      }
+  }
+}
 
 const falsyObj = {
   hi: "I am falsy somewhere...",
